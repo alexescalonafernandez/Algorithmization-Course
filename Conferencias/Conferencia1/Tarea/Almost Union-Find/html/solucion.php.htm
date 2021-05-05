@@ -1,0 +1,99 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript" language="javascript">
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll)
+{
+	LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+	TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+	settings ='height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+	win = window.open(mypage,myname,settings)
+}
+</script>
+
+<script type="text/javascript" language="JavaScript" src="solucion.php_files/boxover.js"></script>
+
+<script type="text/javascript" language="JavaScript">
+function showhide(id){
+if (document.getElementById){
+obj = document.getElementById(id);
+if (obj.style.display == 'none'){
+obj.style.display = '';
+} else {
+obj.style.display = 'none';
+}
+	}
+}
+</script><link rel="stylesheet" href="solucion.php_files/styles.css" type="text/css">
+</head><body bgcolor="" text="">
+  <link rel="stylesheet" href="solucion.php_files/sample.css">  
+  <script type="text/javascript" src="solucion.php_files/highlight.js"></script>
+  <script type="text/javascript">
+      //initHighlightingOnLoad('1c', 'axapta', 'cpp', 'delphi', 'xml', 'html', 'css', 'django', 'java', 'javascript', 'perl', 'php', 'python', 'rib', 'rsl', 'ruby', 'smalltalk', 'sql', 'vbscript'); 'gcc'
+	initHighlightingOnLoad('java');
+  </script><script type="text/javascript" src="solucion.php_files/static.js"></script>
+  
+<pre><code class="java">using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace AlmostUnionFind
+{
+    <span class="class"><span class="keyword">class</span> <span class="title">Program</span>
+    {</span>
+        <span class="keyword">static</span> List&lt;List&lt;<span class="keyword">int</span>&gt;&gt; set;
+
+        <span class="keyword">static</span> <span class="keyword">int</span> IndexOf(<span class="keyword">int</span> n)
+        {
+            <span class="keyword">for</span>(<span class="keyword">int</span> i = set.Count-<span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)
+                <span class="keyword">if</span>(set[i].Contains(n))
+                    <span class="keyword">return</span> i;
+            <span class="keyword">return</span> -<span class="number">1</span>;
+        }
+        <span class="keyword">static</span> <span class="keyword">void</span> Main(string[] args)
+        {
+            set = <span class="keyword">new</span> List&lt;List&lt;<span class="keyword">int</span>&gt;&gt;();
+            <span class="keyword">int</span> n, m, pIndex, qIndex, sum;
+            string str;
+            string[] arr;
+            <span class="keyword">while</span> ((str = Console.ReadLine()) != <span class="keyword">null</span>)
+            {
+                arr = str.Split();
+                set.Clear();
+                n = <span class="keyword">int</span>.Parse(arr[<span class="number">0</span>]);
+                m = <span class="keyword">int</span>.Parse(arr[<span class="number">1</span>]);
+                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)
+                    set.Add(<span class="keyword">new</span> List&lt;<span class="keyword">int</span>&gt;(<span class="keyword">new</span> <span class="keyword">int</span>[] { i + <span class="number">1</span> }));
+                <span class="keyword">while</span> (m-- &gt; <span class="number">0</span>)
+                {
+                    arr = Console.ReadLine().Split();
+                    pIndex = IndexOf(<span class="keyword">int</span>.Parse(arr[<span class="number">1</span>]));
+                    <span class="keyword">if</span> (arr[<span class="number">0</span>] == <span class="string">"3"</span>)
+                    {
+                        sum = <span class="number">0</span>;
+                        foreach (<span class="keyword">int</span> v in set[pIndex])
+                            sum += v;
+                        Console.WriteLine(set[pIndex].Count + <span class="string">" "</span> + sum);
+                    }
+                    <span class="keyword">else</span>
+                    {
+                        qIndex = IndexOf(<span class="keyword">int</span>.Parse(arr[<span class="number">2</span>]));
+                        <span class="keyword">if</span> (pIndex != qIndex)
+                        {
+                            <span class="keyword">if</span> (arr[<span class="number">0</span>] == <span class="string">"1"</span>)
+                            {
+                                set[pIndex].AddRange(set[qIndex]);
+                                set.RemoveAt(qIndex);
+                            }
+                            <span class="keyword">else</span>
+                            {
+                                set[qIndex].Add(<span class="keyword">int</span>.Parse(arr[<span class="number">1</span>]));
+                                set[pIndex].Remove(<span class="keyword">int</span>.Parse(arr[<span class="number">1</span>]));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+</code></pre><br><div align="center"><input class="button" value="Close Window" onclick="window.close()" type="button"></div><br><div style="position: absolute; visibility: hidden;"><div></div><div></div></div></body></html>

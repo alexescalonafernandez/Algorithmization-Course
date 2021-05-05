@@ -1,0 +1,77 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript" language="javascript">
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll)
+{
+	LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+	TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+	settings ='height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+	win = window.open(mypage,myname,settings)
+}
+</script>
+
+<script type="text/javascript" language="JavaScript" src="solucion.php_files/boxover.js"></script>
+
+<script type="text/javascript" language="JavaScript">
+function showhide(id){
+if (document.getElementById){
+obj = document.getElementById(id);
+if (obj.style.display == 'none'){
+obj.style.display = '';
+} else {
+obj.style.display = 'none';
+}
+	}
+}
+</script><link rel="stylesheet" href="solucion.php_files/styles.css" type="text/css">
+</head><body bgcolor="" text="">
+  <link rel="stylesheet" href="solucion.php_files/sample.css">  
+  <script type="text/javascript" src="solucion.php_files/highlight.js"></script>
+  <script type="text/javascript">
+      //initHighlightingOnLoad('1c', 'axapta', 'cpp', 'delphi', 'xml', 'html', 'css', 'django', 'java', 'javascript', 'perl', 'php', 'python', 'rib', 'rsl', 'ruby', 'smalltalk', 'sql', 'vbscript'); 'gcc'
+	initHighlightingOnLoad('java');
+  </script><script type="text/javascript" src="solucion.php_files/static.js"></script>
+  
+<pre><code class="java">using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace AdicionesElementales
+{
+    <span class="class"><span class="keyword">class</span> <span class="title">Program</span>
+    {</span>
+        <span class="keyword">static</span> <span class="keyword">void</span> Main(string[] args)
+        {
+            List&lt;string&gt; elements = <span class="keyword">new</span> List&lt;string&gt;();
+            elements.Add(<span class="string">"{}"</span>);
+            StringBuilder sb = <span class="keyword">new</span> StringBuilder();
+            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">15</span>; i++)
+            {
+                sb.Remove(<span class="number">0</span>, sb.Length);
+                sb.Append(<span class="string">'{'</span>);
+                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++)
+                    sb.Append(elements[j] + <span class="string">","</span>);
+                sb.Remove(sb.Length - <span class="number">1</span>, <span class="number">1</span>);
+                sb.Append(<span class="string">'}'</span>);
+                elements.Add(sb.ToString());
+            }
+            <span class="keyword">int</span> cases = <span class="keyword">int</span>.Parse(Console.ReadLine()), ptr, counter;
+            string s;
+            <span class="keyword">int</span>[] indexes = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];
+            <span class="keyword">while</span> (cases-- &gt; <span class="number">0</span>)
+            {
+                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)
+                {
+                    counter = <span class="number">0</span>;
+                    s = Console.ReadLine();
+                    ptr = s.Length - <span class="number">1</span>;
+                    <span class="keyword">while</span> (s[ptr--] == <span class="string">'}'</span>)
+                        counter++;
+                    indexes[i] = counter - <span class="number">1</span>;
+                }
+                Console.WriteLine(elements[indexes[<span class="number">0</span>] + indexes[<span class="number">1</span>]]);
+            }
+        }
+    }
+}
+</code></pre><br><div align="center"><input class="button" value="Close Window" onclick="window.close()" type="button"></div><br><div style="position: absolute; visibility: hidden;"><div></div><div></div></div></body></html>
