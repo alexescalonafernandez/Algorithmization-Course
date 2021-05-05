@@ -1,0 +1,58 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript" language="javascript">
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll)
+{
+	LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+	TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+	settings ='height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+	win = window.open(mypage,myname,settings)
+}
+</script>
+
+<script type="text/javascript" language="JavaScript" src="solucion.php_files/boxover.js"></script>
+
+<script type="text/javascript" language="JavaScript">
+function showhide(id){
+if (document.getElementById){
+obj = document.getElementById(id);
+if (obj.style.display == 'none'){
+obj.style.display = '';
+} else {
+obj.style.display = 'none';
+}
+	}
+}
+</script><link rel="stylesheet" href="solucion.php_files/styles.css" type="text/css">
+</head><body bgcolor="" text="">
+  <link rel="stylesheet" href="solucion.php_files/sample.css">  
+  <script type="text/javascript" src="solucion.php_files/highlight.js"></script>
+  <script type="text/javascript">
+      //initHighlightingOnLoad('1c', 'axapta', 'cpp', 'delphi', 'xml', 'html', 'css', 'django', 'java', 'javascript', 'perl', 'php', 'python', 'rib', 'rsl', 'ruby', 'smalltalk', 'sql', 'vbscript'); 'gcc'
+	initHighlightingOnLoad('java');
+  </script><script type="text/javascript" src="solucion.php_files/static.js"></script>
+  
+<pre><code class="java">using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Sum
+{
+    <span class="class"><span class="keyword">class</span> <span class="title">Program</span>
+    {</span>
+        <span class="keyword">static</span> <span class="keyword">void</span> Main(string[] args)
+        {
+            <span class="keyword">long</span>[] fib = <span class="keyword">new</span> <span class="keyword">long</span>[<span class="number">500</span>];
+            fib[<span class="number">0</span>] = fib[<span class="number">1</span>] = <span class="number">1</span>;
+            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; fib.Length; i++)
+                fib[i] = fib[i - <span class="number">1</span>] + fib[i - <span class="number">2</span>];
+            <span class="keyword">int</span> cant = <span class="keyword">int</span>.Parse(Console.ReadLine()), c;
+            <span class="keyword">while</span> (cant-- &gt; <span class="number">0</span>)
+            {
+                c = <span class="keyword">int</span>.Parse(Console.ReadLine());
+                Console.WriteLine(string.Format(<span class="string">"{0} {1} {2}"</span>, fib[c - <span class="number">3</span>], fib[c - <span class="number">2</span>], fib[c - <span class="number">1</span>]));
+            }
+        }
+    }
+}
+</code></pre><br><div align="center"><input class="button" value="Close Window" onclick="window.close()" type="button"></div><br><div style="position: absolute; visibility: hidden;"><div></div><div></div></div></body></html>

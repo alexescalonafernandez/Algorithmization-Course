@@ -1,0 +1,8 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\BishopShow.Form1.resources
+obj\Debug\BishopShow.Properties.Resources.resources
+obj\Debug\BishopShow.csproj.GenerateResource.Cache
+bin\Debug\BishopShow.exe
+bin\Debug\BishopShow.pdb
+obj\Debug\BishopShow.exe
+obj\Debug\BishopShow.pdb
