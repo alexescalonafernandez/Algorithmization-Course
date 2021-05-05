@@ -1,0 +1,78 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript" language="javascript">
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll)
+{
+	LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+	TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+	settings ='height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+	win = window.open(mypage,myname,settings)
+}
+</script>
+
+<script type="text/javascript" language="JavaScript" src="solucion.lcm_files/boxover.js"></script>
+
+<script type="text/javascript" language="JavaScript">
+function showhide(id){
+if (document.getElementById){
+obj = document.getElementById(id);
+if (obj.style.display == 'none'){
+obj.style.display = '';
+} else {
+obj.style.display = 'none';
+}
+	}
+}
+</script><link rel="stylesheet" href="solucion.lcm_files/styles.css" type="text/css">
+</head><body bgcolor="" text="">
+  <link rel="stylesheet" href="solucion.lcm_files/sample.css">  
+  <script type="text/javascript" src="solucion.lcm_files/highlight.js"></script>
+  <script type="text/javascript">
+      //initHighlightingOnLoad('1c', 'axapta', 'cpp', 'delphi', 'xml', 'html', 'css', 'django', 'java', 'javascript', 'perl', 'php', 'python', 'rib', 'rsl', 'ruby', 'smalltalk', 'sql', 'vbscript'); 'gcc'
+	initHighlightingOnLoad('java');
+  </script><script type="text/javascript" src="solucion.lcm_files/static.js"></script>
+  
+<pre><code class="java"><span class="keyword">import</span> java.io.BufferedReader;
+<span class="keyword">import</span> java.io.IOException;
+<span class="keyword">import</span> java.io.InputStreamReader;
+<span class="keyword">import</span> java.math.BigInteger;
+
+<span class="comment">/**
+ *
+ * @author aefernandez
+ */</span>
+<span class="class"><span class="keyword">class</span> <span class="title">Main</span> {</span>
+
+    <span class="comment">/**
+     * @param args the command line arguments
+     */</span>
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) <span class="keyword">throws</span> IOException {
+        BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));
+        <span class="keyword">int</span> cases = Integer.parseInt(br.readLine()),n;
+        <span class="keyword">boolean</span>[] mark = <span class="keyword">new</span> <span class="keyword">boolean</span>[<span class="number">10001</span>];
+        <span class="keyword">int</span>[] frequency = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10001</span>];
+        BigInteger lcm, gcd, f;
+        String[] arr;
+        <span class="keyword">while</span>(cases-- &gt;<span class="number">0</span>)
+        {
+            n = Integer.parseInt(br.readLine());
+            arr = br.readLine().split(<span class="string">" "</span>);
+            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)
+                frequency[i] = Integer.parseInt(arr[i]);
+            mark[<span class="number">0</span>] = <span class="keyword">true</span>;
+            lcm = BigInteger.ONE;
+            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)
+                <span class="keyword">if</span>(!mark[frequency[i]])
+                {
+                    mark[frequency[i]] = <span class="keyword">true</span>;
+                    f = <span class="keyword">new</span> BigInteger(arr[i]);
+                    gcd = f.gcd(lcm);
+                    lcm = lcm.multiply(f.divide(gcd));
+                }
+            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)
+                mark[frequency[i]] = <span class="keyword">false</span>;
+            System.out.println(lcm);
+        }
+    }
+
+}</code></pre><br><div align="center"><input class="button" value="Close Window" onclick="window.close()" type="button"></div><br><div style="position: absolute; visibility: hidden;"><div></div><div></div></div></body></html>

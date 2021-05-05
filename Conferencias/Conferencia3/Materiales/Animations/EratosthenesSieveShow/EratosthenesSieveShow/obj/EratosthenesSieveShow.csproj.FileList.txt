@@ -1,0 +1,8 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\EratosthenesSieveShow.Form1.resources
+obj\Debug\EratosthenesSieveShow.Properties.Resources.resources
+obj\Debug\EratosthenesSieveShow.csproj.GenerateResource.Cache
+bin\Debug\EratosthenesSieveShow.exe
+bin\Debug\EratosthenesSieveShow.pdb
+obj\Debug\EratosthenesSieveShow.exe
+obj\Debug\EratosthenesSieveShow.pdb

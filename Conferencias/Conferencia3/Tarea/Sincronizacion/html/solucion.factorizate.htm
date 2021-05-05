@@ -1,0 +1,162 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript" language="javascript">
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll)
+{
+	LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+	TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+	settings ='height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+	win = window.open(mypage,myname,settings)
+}
+</script>
+
+<script type="text/javascript" language="JavaScript" src="solucion.factorizate_files/boxover.js"></script>
+
+<script type="text/javascript" language="JavaScript">
+function showhide(id){
+if (document.getElementById){
+obj = document.getElementById(id);
+if (obj.style.display == 'none'){
+obj.style.display = '';
+} else {
+obj.style.display = 'none';
+}
+	}
+}
+</script><link rel="stylesheet" href="solucion.factorizate_files/styles.css" type="text/css">
+</head><body bgcolor="" text="">
+  <link rel="stylesheet" href="solucion.factorizate_files/sample.css">  
+  <script type="text/javascript" src="solucion.factorizate_files/highlight.js"></script>
+  <script type="text/javascript">
+      //initHighlightingOnLoad('1c', 'axapta', 'cpp', 'delphi', 'xml', 'html', 'css', 'django', 'java', 'javascript', 'perl', 'php', 'python', 'rib', 'rsl', 'ruby', 'smalltalk', 'sql', 'vbscript'); 'gcc'
+	initHighlightingOnLoad('java');
+  </script><script type="text/javascript" src="solucion.factorizate_files/static.js"></script>
+  
+<pre><code class="java"><span class="keyword">import</span> java.io.BufferedReader;
+<span class="keyword">import</span> java.io.IOException;
+<span class="keyword">import</span> java.io.InputStreamReader;
+<span class="keyword">import</span> java.math.BigInteger;
+<span class="keyword">import</span> java.util.ArrayList;
+<span class="comment">/**
+ *
+ * @author aefernandez
+ */</span>
+<span class="class"><span class="keyword">class</span> <span class="title">Main</span> {</span>
+
+    <span class="comment">/**
+     * @param args the command line arguments
+     */</span>
+
+    <span class="keyword">static</span> <span class="keyword">boolean</span>[] composites;
+
+    <span class="keyword">static</span> ArrayList&lt;Integer&gt; factors, exps, factorsInLcm,expsInLcm;
+    <span class="keyword">static</span> <span class="keyword">void</span> InitializeErathostenes(<span class="keyword">int</span> n)
+    {
+        composites = <span class="keyword">new</span> <span class="keyword">boolean</span>[n+<span class="number">1</span>];
+        <span class="keyword">int</span> sqrt = (<span class="keyword">int</span>)Math.ceil(Math.sqrt(n));
+        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= sqrt;i++)
+            <span class="keyword">if</span>(!composites[i])
+                <span class="keyword">for</span>(<span class="keyword">int</span> j = i+i;j &lt;= n; j+=i)
+                    composites[j] = <span class="keyword">true</span>;
+    }
+
+    <span class="keyword">static</span> <span class="keyword">void</span> Facotorizate(<span class="keyword">int</span> n)
+    {
+        factors.clear();
+        exps.clear();
+        <span class="keyword">if</span>(!composites[n])
+        {
+            factors.add(n);
+            exps.add(<span class="number">1</span>);
+        }
+        <span class="keyword">else</span>
+        {
+            <span class="keyword">int</span> c;
+            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; n &gt; <span class="number">1</span>; i++)
+                <span class="keyword">if</span>(!composites[i] &amp;&amp; n % i == <span class="number">0</span>)
+                {
+                    c = <span class="number">0</span>;
+                    <span class="keyword">for</span>(<span class="keyword">int</span> j = i; n % i == <span class="number">0</span>; j+=i)
+                    {
+                        c++;
+                        n /= i;
+                    }
+                    factors.add(i);
+                    exps.add(c);
+                }
+         }
+    }
+
+    <span class="keyword">static</span> <span class="keyword">void</span> UpdateLCM_FactorsAndExps()
+    {
+        <span class="keyword">int</span> i = <span class="number">0</span>,index,max;
+        <span class="keyword">for</span>(Integer factor:factors)
+        {
+            index = factorsInLcm.indexOf(factor);
+            <span class="keyword">if</span>(index == -<span class="number">1</span>)
+            {
+                factorsInLcm.add(factor);
+                expsInLcm.add(exps.get(i));
+            }
+            <span class="keyword">else</span>
+            {
+                max = Math.max(exps.get(i), expsInLcm.get(index));
+                expsInLcm.set(index, max);
+            }
+            i++;
+        }
+    }
+
+    <span class="keyword">static</span> BigInteger LCM()
+    {
+        <span class="keyword">int</span> i = <span class="number">0</span>;
+        BigInteger lcm = BigInteger.ONE,b;
+        <span class="keyword">for</span>(Integer factor:factorsInLcm)
+        {
+            b = <span class="keyword">new</span> BigInteger(factor+<span class="string">""</span>);
+            lcm = lcm.multiply(b.pow(expsInLcm.get(i)));
+            i++;
+        }
+        <span class="keyword">return</span> lcm;
+    }
+
+    
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) <span class="keyword">throws</span> IOException {
+        InitializeErathostenes(<span class="number">10000</span>);
+        <span class="keyword">boolean</span>[] mark = <span class="keyword">new</span> <span class="keyword">boolean</span>[<span class="number">10001</span>];
+        <span class="keyword">int</span>[] frequency = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10001</span>];
+        String[] arr;
+        factors = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();
+        exps = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();
+        factorsInLcm = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();
+        expsInLcm = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();
+        BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));
+        <span class="keyword">int</span> cases = Integer.parseInt(br.readLine()), n, k;
+        <span class="keyword">while</span>(cases-- &gt;<span class="number">0</span>)
+        {
+            factorsInLcm.clear();
+            expsInLcm.clear();
+            n = Integer.parseInt(br.readLine());
+            arr = br.readLine().split(<span class="string">" "</span>);
+            mark[<span class="number">0</span>] = <span class="keyword">true</span>;
+            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)
+            {
+                frequency[i] = k = Integer.parseInt(arr[i]);
+                <span class="keyword">if</span>(!mark[k])
+                {
+                    mark[k] = <span class="keyword">true</span>;
+                    Facotorizate(k);
+                    UpdateLCM_FactorsAndExps();
+                }
+            }
+            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)
+                mark[frequency[i]] = <span class="keyword">false</span>;
+            System.out.println(LCM());
+        }
+    }
+
+}
+
+
+
+</code></pre><br><div align="center"><input class="button" value="Close Window" onclick="window.close()" type="button"></div><br><div style="position: absolute; visibility: hidden;"><div></div><div></div></div></body></html>

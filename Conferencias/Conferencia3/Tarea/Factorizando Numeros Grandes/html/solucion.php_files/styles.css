@@ -1,0 +1,192 @@
+/*
++----------------------------------------------------------------------+
+|	PHP-Fusion Content Management System (c)2006/7 CSS file Entourage
+|
+|	Released under the terms and conditions of the
+|	GNU General Public License (http://gnu.org).
+|
+|	Fuzed Themes - http://www.phpfusion-themes.com
++----------------------------------------------------------------------+
+*/
+/* Sidebar styles */
+a{
+	outline: none;
+}
+
+a:active{
+	outline: none;
+}
+
+#sideBar{
+	text-align:left;
+}
+
+#sideBar h2{
+	color:#FFFFFF;
+	font-size:110%;
+	font-family:arial;
+	margin:10px 10px 10px 10px;	
+	width: 350px;
+	font-weight:bold !important;
+}
+
+#sideBar h2 span{
+	font-size:125%;
+	font-weight:normal !important;
+}
+
+#sideBar ul{
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+}
+
+#sideBar li{
+	margin:0px 10px 3px 10px;
+	list-style-type:none;
+	display:block;
+	background-color:#555;
+	width:350px !important; 
+	width: 420px;
+	color:#FFFFFF;
+	padding-left: 5px;
+	padding-right: 80px;
+}
+
+#sideBar li a{
+	width:100%;
+}
+
+#sideBar li a:link,
+#sideBar li a:visited{
+	border: 1px solid #606060;
+	color: #C6C6C6;
+	text-decoration: none;
+	width: 100%;
+}
+
+#sideBar li a:hover{
+	color: #C6C6C6;
+	background: #707070;
+	border: 1px solid #898989;
+	text-decoration: none;
+}
+
+#sideBar{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 80px;
+	right:0px;
+	background-image:url('images/background.gif');
+	background-position:top left;
+	background-repeat:repeat-y;
+}
+
+#sideBarTab{
+	float:left;
+	height:137px;
+	width:28px;
+}
+
+#sideBarTab img{
+	border:0px solid #FFFFFF;
+}
+
+#sideBarContentsInner{
+	width:200px;
+}
+
+#sideBarContents{
+	float:left;
+	overflow:hidden !important;
+	width:350px;
+	height:420px;
+}
+
+/**********************/
+
+body { padding: 0px; margin: 0px; color: #0F392D; background: #fdfdfd }
+a { font-size: 11px; color: #538F71; text-decoration: none; background: inherit }
+a.visit:visited { color: #538F71; text-decoration: none; background: inherit }
+a:hover, a.visit:hover { color: #00B887; text-decoration: underline; background: inherit }
+a.side {color: #0F392D; text-decoration: none; font-weight: bold; font-size: 11px; background: inherit }
+a:hover.side {color: #00B887; text-decoration: underline; background: inherit }
+.main-body { font-family: Tahoma, Arial, helvetica, serif; font-size: 11px; color: #0F392D; background-color: #F8F9F8; padding: 3px }
+hr { border-top: 1px #E2E2E2 solid; border-bottom: 1px #F9F9F9 solid; margin: 3px 3px 3px 3px }
+td { font-family: Tahoma, Verdana, Helvetica, sans-serif, Arial; font-size: 11px }
+pre { font-family: Tahoma, Arial, helvetica, serif; font-size:10px }
+.alt { color: #666; background: inherit }
+img {	border: 0px }
+.wrapper { margin: auto; border:0; width:100%; font-family: Helvetica, sans-serif, Arial; font-size: 11px; font-weight: 300; color: #333; background: inherit }
+.border_left { background-image: url(images/border_left.jpg); background-repeat: repeat-y; width: 30px }
+.border_right { background-image: url(images/border_right.jpg);	background-repeat: repeat-y; width: 30px }
+.sub_nav { background-image: url(images/nav_bg.jpg); text-align: center; height: 32px; color: #095542; background-color: #F7F7F7 }
+.navigation { padding: 5px 5px 5px 5px }
+#navigation { height: 32px; text-align: center;padding: 0px 0px }
+#navigation a { font: normal small-caps bold 11px/22px Verdana, Arial, Helvetica, sans-serif; padding: 0px 4px 0px 4px; color: #095542; background-color: inherit; text-decoration: none; letter-spacing: 0.1em }
+#navigation a:hover { color:#17A07C; background-color: inherit }
+.filler_nav { background-image: url(images/filler_nav.jpg); color: #333; height: 8px; width: auto; background: inherit }
+.tbl-border { background-color: #C1D0CC; color: #DDDDDD }
+.tbl { font-family: Tahoma, Arial, helvetica, serif; font-size: 11px; padding: 3px 4px 3px 4px }
+.tbl1 { font-family: Tahoma, Arial, helvetica, serif;	font-size: 11px; color: #0F392D; background-color: #F8F9F8; padding:4px }
+.tbl2 { font-family: Tahoma, Arial, helvetica, serif;	font-size: 11px; color: #0F392D; background-color: #FDFDFD; padding:4px }
+
+.tbl3 { font-family: Tahoma, Arial, helvetica, serif;	font-size: 11px; color: #0F392D; padding:4px }
+
+.tbl4 { font-family: Tahoma, Arial, helvetica, serif;	font-size: 11px; color: #0F392D; background-color: #E2FAFF; padding:4px }
+
+.tbl5 { font-family: Tahoma, Arial, helvetica, serif;	font-size: 11px; color: #0F392D; background-color: #DBE4E0; padding:4px }
+
+.tbl6 { font-family: Tahoma, Arial, helvetica, serif;	font-size: 11px; color: #0F392D; background-color: #EFDBE0; padding:4px }
+
+.tbl7 { font-family: Tahoma, Arial, helvetica, serif;	font-size: 11px; color: #0F392D; background-color: #FDFDE5; padding:4px }
+
+.tbl8 { font-family: Tahoma, Arial, helvetica, serif;	font-size: 11px; color: #0F392D; background-color: #CBD4D0; padding:4px }
+
+.tbl9 { font-family: Tahoma, Arial, helvetica, serif;	font-size: 11px; color: #0F392D; background-color: #EFDBE0; padding:4px }
+
+.forum-caption { height: 24px; font-family: Tahoma, Arial, helvetica, serif; font-size: 11px; font-weight: bold; background-image: url(images/forum_bg.gif); color: #0B785F; background-color: #E6EEED; padding: 3px 4px 3px 4px }
+.header { height: 83px; background-image: url(images/main_head_bg.jpg) }
+.footer { padding-bottom: 0px; font: normal 11px tahoma, verdana, arial, sans-serif; text-align: center; color: #333; background: #FFFFFF url(images/footer_bg.jpg); height: 77px }
+.footer_cell { background: #FFFFFF url(images/footer_cell.jpg); height: 77px }
+form { display: inline; margin: 0; padding: 0 }
+form input:focus, form input:hover, form select:focus, form select:hover, form textarea:focus, form textarea:hover
+{ border: #779A91 1px solid; color: #1B5A35 }
+.button { border: 1px solid #C1D0CC; background: #FFFFFF url(images/button.jpg) bottom left repeat-x; font-size: 10px; color: #37684B; font-family: verdana, sans-serif; margin-top: 2px }
+.textbox { border: 1px solid #C1D0CC; background-color: #FFFFFF; font-family: "Lucida Sans Unicode", Verdana, sans-serif; font-size: 11px; color: #1B5A35 }
+.quote {border: 1px #C1D0CC solid; background: #FFFFFF url(images/code_header.png) no-repeat; background-position: top right; color: #4B8500; padding-left: 5px; margin: 0px 20px 0px 20px}
+.smalltext { font: normal 11px tahoma, verdana, arial, sans-serif }
+.side-border-left { padding: 5px }
+.side-border-right { padding: 5px }
+.cap-left { width: 9px; height: 21px; background-image: url(images/cap-left.gif) }
+.cap-right { width: 9px; height: 21px; background-image: url(images/cap-right.gif) }
+.cap-main {	font-family: Verdana,Tahoma,Arial,Sans-Serif; font-size: 11px; font-weight: bold; color: #37684B; text-align: left; height: 21px; padding: 5px 2px 0px 5px; background: inherit; background-image: url(images/cap-main.gif); background-repeat: repeat-x }
+.border-left { width: 9px; background-image:url(images/border-left.gif); background-repeat: repeat-y }
+.border-right { width: 9px; background-image: url(images/border-right.gif); background-repeat: repeat-y }
+.border-bleft { width: 9px; height:16px; background-image: url(images/border-bleft.gif) }
+.border-bright { width: 9px; height:16px; background-image: url(images/border-bright.gif) }
+.border-bmain { height:16px; background-image: url(images/border-bmain.gif); background-repeat: repeat-x }
+.table-left { width: 11px; height: 38px; background-image: url(images/table-left.gif) }
+.table-right { width: 11px; height: 38px; background-image: url(images/table-right.gif) }
+.table-main { font-family: Verdana,Tahoma,Arial,Sans-Serif; font-size: 11px;font-weight: bold; color: #37684B; text-align: left; height: 38px; padding: 0px 2px 0px 6px; background: inherit; background-image: url(images/table-main.gif); background-repeat: repeat-x }
+.tborder-left { width: 11px; background-image: url(images/tborder-left.gif); background-repeat: repeat-y }
+.tborder-right { width: 11px; background-image: url(images/tborder-right.gif); background-repeat: repeat-y }
+.tborder-bleft { width: 5px; height: 16px; background-image:url(images/tborder-bleft.gif) }
+.tborder-bright { width: 5px; height: 16px; background-image:url(images/tborder-bright.gif) }
+.tborder-bmain { height: 16px; background-image :url(images/tborder-bmain.gif); background-repeat: repeat-x }
+.side-body { font: normal 11px tahoma, verdana, arial, sans-serif; color: #2B523B; padding: 4px 4px 6px 4px; border: 1px solid #9FB4AE; background: #F8F9F8 }
+.news_block { padding: 4px 4px 6px 4px; border: 1px solid #C1D0CC; line-height:16px }
+.news_poster { padding: 4px; border-top: 0px solid #C1D0CC; border-left: 1px solid #C1D0CC; border-right: 1px solid #C1D0CC; border-bottom: 1px solid #C1D0CC; line-height:16px; text-align:center }
+.poll { height: 13px; border: 0px #C6C6C6 solid }
+.comment-name { font-weight: bold; color: #3E61A9; background: inherit }
+.shoutboxname { font-weight: bold; color: #3E61A9; background: inherit }
+.shoutbox { color: #162962; background: inherit }
+.shoutboxdate { font: normal 9px verdana, tahoma, arial, sans-serif; color: #076F78; background: inherit }
+.small { font-size: 11px; font-weight: normal }
+.small2 { font: normal 9px verdana, tahoma, arial, sans-serif; color: #076F78; background: inherit }
+.comment-name { font-family: Tahoma, Arial, helvetica, serif; color:#113355 }
+
+/*esto es para las respuestas de los user C++ */
+/*.negry { color: #000000; font-weight: bold;}
+.includeV { color: #009900; }
+.prin { color: #CCCCCC; }*/
