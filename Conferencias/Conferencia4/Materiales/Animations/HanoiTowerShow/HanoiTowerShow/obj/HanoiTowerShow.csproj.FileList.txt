@@ -1,0 +1,8 @@
+bin\Debug\HanoiTowerShow.exe
+bin\Debug\HanoiTowerShow.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\HanoiTowerShow.Form1.resources
+obj\Debug\HanoiTowerShow.Properties.Resources.resources
+obj\Debug\HanoiTowerShow.csproj.GenerateResource.Cache
+obj\Debug\HanoiTowerShow.exe
+obj\Debug\HanoiTowerShow.pdb
