@@ -15,8 +15,8 @@ namespace AritmeticaPrimaria
             {
                 arr = line.Split();
                 maxLength = arr.Max(e => e.Length);
-                left = arr[0].PadLeft(maxLength - arr[0].Length, '0').ToCharArray();
-                right = arr[1].PadLeft(maxLength - arr[1].Length, '0').ToCharArray();
+                left = arr[0].PadLeft(maxLength, '0').ToCharArray();
+                right = arr[1].PadLeft(maxLength, '0').ToCharArray();
                 carry = carryOperations = 0;
                 for (var i = maxLength - 1; i >= 0; i--)
                 {
